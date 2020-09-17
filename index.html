@@ -35,7 +35,7 @@
             <div class="col-md-4">
                 <div id="withdraw">
                     <h4>Withdraw</h4>
-                    <h5>$00</h5>
+                    <h5>$<span id="totalWithdraw">00</span></h5>
                 </div>
             </div>
             <div class="col-md-4">
@@ -56,7 +56,7 @@
                 <div class="log-in-form submit">
                     <h4>Withdraw</h4> <br>
                     <input type="text" name="" id="" placeholder="$ amount you want to withdraw" class="form-control"> <br> 
-                    <button class="btn btn-success">Withdraw</button>
+                    <button class="btn btn-success" id="WithdrawNowButton">Withdraw</button>
                 </div>
             </div>
         </div>
@@ -84,7 +84,9 @@
 
         const logInID = document.getElementById('logInID');
         logInID.addEventListener("click",handleClick);
+         
 
+         //Deposit
         const handleClickDeposit = () => {
             const depositAmmountInput =  document.getElementById('depositAmmountInput').value;
             const depositAmmountInputInNumber = parseFloat(depositAmmountInput);
@@ -94,7 +96,7 @@
             const currentDepositInNumber = parseFloat(currentDeposit);
             
             const totalDeposit = depositAmmountInputInNumber + currentDepositInNumber;
-            console.log(totalDeposit);
+            document.getElementById('depositAmmountInput').value = '';
             
 
             document.getElementById('currentDeposit').innerText = totalDeposit;
@@ -102,6 +104,17 @@
 
         const depositAmmountAdd = document.getElementById('depositAmmountAdd');
         depositAmmountAdd.addEventListener('click',handleClickDeposit);
+
+
+
+        //Withdraw
+        const handleClickWithdrawNowButton = () => {
+            console.log("Bina karone withdraw valo na");
+        }
+
+         const WithdrawNowButton = document.getElementById('WithdrawNowButton');
+         WithdrawNowButton.addEventListener('click' , handleClickWithdrawNowButton)
+
     </script>
   </body>
 </html>
