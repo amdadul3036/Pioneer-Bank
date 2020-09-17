@@ -87,11 +87,13 @@
 
         const handleClickDeposit = () => {
             const depositAmmountInput =  document.getElementById('depositAmmountInput').value;
-            console.log("Dhrubo");
+            const depositAmmountInputInNumber = parseFloat(depositAmmountInput);
+            console.log(depositAmmountInputInNumber);
+            console.log(typeof depositAmmountInputInNumber);
         }
 
         const depositAmmountAdd = document.getElementById('depositAmmountAdd');
-        depositAmmountAdd.addEventListener('click' , handleClickDeposit);
+        depositAmmountAdd.addEventListener('click',handleClickDeposit);
     </script>
   </body>
 </html>
