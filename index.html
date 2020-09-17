@@ -41,7 +41,7 @@
             <div class="col-md-4">
                 <div id="balance">
                     <h4>Balance</h4>
-                    <h5>$1240</h5>
+                    <h5>$ <span id="totalBalance">1240</span></h5>
                 </div>
             </div>
 
@@ -100,6 +100,16 @@
             
 
             document.getElementById('currentDeposit').innerText = totalDeposit;
+
+
+            //Balance Section
+            
+            const totalBalance = document.getElementById('totalBalance').innerText;
+            const totalBalanceInNumber = parseFloat(totalBalance);
+            
+            const totalBalanceBox = totalBalanceInNumber + depositAmmountInputInNumber;
+            document.getElementById('totalBalance').innerText = totalBalanceBox;
+
         }
 
         const depositAmmountAdd = document.getElementById('depositAmmountAdd');
@@ -121,6 +131,8 @@
             document.getElementById('currentWithdraw').innerText = totalWithdraw;
 
             document.getElementById('WithdrawAmmountInput').value = '';
+
+
         }
 
          const WithdrawNowButton = document.getElementById('WithdrawNowButton');
