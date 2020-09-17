@@ -133,6 +133,14 @@
             document.getElementById('WithdrawAmmountInput').value = '';
 
 
+            //Balance Section
+
+            
+            const totalBalance = document.getElementById('totalBalance').innerText;
+            const totalBalanceInNumber = parseFloat(totalBalance);
+            
+            const totalBalanceBox = totalBalanceInNumber - totalWithdraw;
+            document.getElementById('totalBalance').innerText = totalBalanceBox;
         }
 
          const WithdrawNowButton = document.getElementById('WithdrawNowButton');
