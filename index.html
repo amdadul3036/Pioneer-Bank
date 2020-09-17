@@ -35,7 +35,7 @@
             <div class="col-md-4">
                 <div id="withdraw">
                     <h4>Withdraw</h4>
-                    <h5>$<span id="totalWithdraw">00</span></h5>
+                    <h5>$<span id="currentWithdraw">00</span></h5>
                 </div>
             </div>
             <div class="col-md-4">
@@ -55,7 +55,7 @@
             <div class="row col-md-6">
                 <div class="log-in-form submit">
                     <h4>Withdraw</h4> <br>
-                    <input type="text" name="" id="" placeholder="$ amount you want to withdraw" class="form-control"> <br> 
+                    <input type="text" name="" id="WithdrawAmmountInput" placeholder="$ amount you want to withdraw" class="form-control"> <br> 
                     <button class="btn btn-success" id="WithdrawNowButton">Withdraw</button>
                 </div>
             </div>
@@ -109,7 +109,18 @@
 
         //Withdraw
         const handleClickWithdrawNowButton = () => {
-            console.log("Bina karone withdraw valo na");
+            const WithdrawAmmountInput = document.getElementById('WithdrawAmmountInput').value;
+            const WithdrawAmmountInputInNumber = parseFloat(WithdrawAmmountInput);
+            
+
+            const currentWithdraw = document.getElementById('currentWithdraw').innerText;
+            const currentWithdrawInNumber = parseFloat(currentWithdraw);
+            
+
+            const totalWithdraw = WithdrawAmmountInputInNumber + currentWithdrawInNumber;
+            document.getElementById('currentWithdraw').innerText = totalWithdraw;
+
+            
         }
 
          const WithdrawNowButton = document.getElementById('WithdrawNowButton');
